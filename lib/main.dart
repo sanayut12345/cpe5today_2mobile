@@ -5,156 +5,76 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
         body: Container(
-           color: Colors.blue,
-           child: TestWidget(),
-           height: 800.0,
-           width: 500.0,
+          alignment: Alignment.center,
+          color: Colors.blue,
+          child: TestStateflull(),           
         )
       ),
     );
   }
 }
+class TestStateflull extends StatefulWidget {
+  @override
+  _TestStateflullState createState() => _TestStateflullState();
+}
 
-class TestWidget extends StatelessWidget {
+class _TestStateflullState extends State<TestStateflull> {
+  int count = 0;
+
+  List<Color> color = [Colors.red,Colors.amber,Colors.pink,Colors.purple,Colors.teal,Colors.white];
+  int countColors = 0;
+  onchangColors(){
+    if (countColors > 4){
+      setState(() {          
+        countColors = 0;
+        });
+      }
+      else{
+        setState(() {
+          countColors = countColors+1;
+          
+        });
+      }
+    }
   @override
   Widget build(BuildContext context) {
-    return GridView.count(
-      crossAxisCount: 3,
-      children: [        
-        Container(
-          height: 200.0,
-          color: Colors.lightBlue,
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          "Hello count $count",
+          style: TextStyle(
+            fontSize: 50.0
+          ),
         ),
-        Container(
-          height: 200.0,
-          color: Colors.indigo,
+        RaisedButton(
+          onPressed: (){
+            setState(() {
+              count = count+1;
+            });
+
+          }
         ),
-        Container(
-          height: 200.0,
-          color: Colors.grey,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.green,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.brown,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.blueGrey,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.yellow,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.black,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.lightBlue,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.indigo,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.grey,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.green,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.brown,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.blueGrey,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.yellow,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.black,
-        ), 
-        Container(
-          height: 200.0,
-          color: Colors.lightBlue,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.indigo,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.grey,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.green,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.brown,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.blueGrey,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.yellow,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.black,
-        ), 
-        Container(
-          height: 200.0,
-          color: Colors.lightBlue,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.indigo,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.grey,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.green,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.brown,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.blueGrey,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.yellow,
-        ),
-        Container(
-          height: 200.0,
-          color: Colors.black,
-        ),  
+        FlatButton(
+          onPressed: (){
+            onchangColors();
+          }, 
+          child: Container(
+            height: 100,
+            width: 200,
+            color: color[countColors],
+          )
+        )
       ],
     );
   }
+
+  
+
 }
