@@ -23,13 +23,9 @@ class MyApp extends StatelessWidget {
 class TestWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Text(
-      'Hello!',
-      style: TextStyle(
-        fontSize: 50,
-        color: Color(0xff00bfa5),   // Colors
-        fontWeight: FontWeight.w800
-      ),
-    );
+    return Image.asset(
+      "assets/doraemon.png",
+      scale: 10.0,
+      );
   }
 }
