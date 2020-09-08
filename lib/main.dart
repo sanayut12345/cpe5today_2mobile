@@ -23,8 +23,41 @@ class MyApp extends StatelessWidget {
 class TestWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListView(
-      children: [
+    return GridView.count(
+      crossAxisCount: 3,
+      children: [        
+        Container(
+          height: 200.0,
+          color: Colors.lightBlue,
+        ),
+        Container(
+          height: 200.0,
+          color: Colors.indigo,
+        ),
+        Container(
+          height: 200.0,
+          color: Colors.grey,
+        ),
+        Container(
+          height: 200.0,
+          color: Colors.green,
+        ),
+        Container(
+          height: 200.0,
+          color: Colors.brown,
+        ),
+        Container(
+          height: 200.0,
+          color: Colors.blueGrey,
+        ),
+        Container(
+          height: 200.0,
+          color: Colors.yellow,
+        ),
+        Container(
+          height: 200.0,
+          color: Colors.black,
+        ),
         Container(
           height: 200.0,
           color: Colors.lightBlue,
@@ -57,6 +90,70 @@ class TestWidget extends StatelessWidget {
           height: 200.0,
           color: Colors.black,
         ), 
+        Container(
+          height: 200.0,
+          color: Colors.lightBlue,
+        ),
+        Container(
+          height: 200.0,
+          color: Colors.indigo,
+        ),
+        Container(
+          height: 200.0,
+          color: Colors.grey,
+        ),
+        Container(
+          height: 200.0,
+          color: Colors.green,
+        ),
+        Container(
+          height: 200.0,
+          color: Colors.brown,
+        ),
+        Container(
+          height: 200.0,
+          color: Colors.blueGrey,
+        ),
+        Container(
+          height: 200.0,
+          color: Colors.yellow,
+        ),
+        Container(
+          height: 200.0,
+          color: Colors.black,
+        ), 
+        Container(
+          height: 200.0,
+          color: Colors.lightBlue,
+        ),
+        Container(
+          height: 200.0,
+          color: Colors.indigo,
+        ),
+        Container(
+          height: 200.0,
+          color: Colors.grey,
+        ),
+        Container(
+          height: 200.0,
+          color: Colors.green,
+        ),
+        Container(
+          height: 200.0,
+          color: Colors.brown,
+        ),
+        Container(
+          height: 200.0,
+          color: Colors.blueGrey,
+        ),
+        Container(
+          height: 200.0,
+          color: Colors.yellow,
+        ),
+        Container(
+          height: 200.0,
+          color: Colors.black,
+        ),  
       ],
     );
   }
