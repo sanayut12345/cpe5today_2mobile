@@ -23,9 +23,8 @@ class MyApp extends StatelessWidget {
 class TestWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Image.asset(
-      "assets/doraemon.png",
-      scale: 10.0,
+    return Image.network(
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcREcqspi5XGwdEJQttgGmlAxVMb8sazls8vFQ&usqp=CAU",
       );
   }
 }
