@@ -35,7 +35,10 @@ class _TestStateflullState extends State<TestStateflull> {
         children: [
           FlatButton(
             onPressed: (){
-
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context)=>Screen2())
+              );
             }, 
             child: Container(
               alignment: Alignment.center,
@@ -74,6 +77,8 @@ class _Screen2State extends State<Screen2> {
         title: Text("Page2"),
       ),
       body: Container(
+        // height: double.infinity,
+        // width: double.infinity,
         color: Colors.pink,
         child: Text(
           "Page 2 น่ะ",
