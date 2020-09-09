@@ -25,101 +25,63 @@ class TestStateflull extends StatefulWidget {
 }
 
 class _TestStateflullState extends State<TestStateflull> {
-  String message = "ยังไม่กด";
-  List<Color> color = [Colors.red,Colors.amber];
-  int countColors = 0;
-  _ontapup(){
-    setState(() {
-      message = "ปล่อยแล้ว";
-      countColors = 0;
-    });
-  }
-  _ontapdown(){
-    setState(() {
-      message = "กดแล้ว";
-      countColors = 1;
-    });
-  }
 
-  TextEditingController messagefrom;
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    messagefrom = TextEditingController();
-  }
-  // @override
-  // void dispose() {
-  //   // TODO: implement dispose
-  //   super.dispose();
-  // }
-  String _messages = "dfdf"; 
-  _onsubmitt(){
-    setState(() {
-      _messages = messagefrom.text;
-    });
-    
-  }
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Text(
-          "Hello $message",
+    return Container(
+      alignment: Alignment.center,
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          FlatButton(
+            onPressed: (){
+
+            }, 
+            child: Container(
+              alignment: Alignment.center,
+              height: 100,
+              width: 200,
+              decoration: BoxDecoration(
+                color: Colors.lime[900],
+                borderRadius: BorderRadius.all(Radius.circular(40.0))                
+              ),
+              child: Text(
+                "Next Pages",
+                style: TextStyle(
+                  fontSize: 30.0
+                ),
+                ),
+            ),
+          ),
+        ],
+      ),
+    );   
+  }
+}
+
+
+
+class Screen2 extends StatefulWidget {
+  @override
+  _Screen2State createState() => _Screen2State();
+}
+
+class _Screen2State extends State<Screen2> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Page2"),
+      ),
+      body: Container(
+        color: Colors.pink,
+        child: Text(
+          "Page 2 น่ะ",
           style: TextStyle(
             fontSize: 50.0
           ),
-        ),
-        GestureDetector(
-
-          onTapDown: (e) =>{
-            _ontapdown()
-          },
-          onTapUp: (e)=>{
-            _ontapup()
-          },
-          child: Container(
-            width: 200,
-            height: 100,
-            color: color[countColors],
           ),
-        ),
-        Container(
-          width: 300.0,
-          child: TextFormField(            
-            controller: messagefrom,  
-            decoration: InputDecoration(
-              hintText: "ลองพิมพ์ดู",
-              hintStyle: TextStyle(
-                color: Colors.green,
-                fontSize: 30.0
-              ),
-              border: InputBorder.none,
-              icon: Icon(
-                Icons.message,
-                size: 50.0,
-                ),
-                fillColor: Colors.deepPurple,
-                filled: true,                
-            ),        
-            
-          ),
-        ),
-        RaisedButton(
-          onPressed: (){
-            _onsubmitt();
-            messagefrom.clear();
-        }),
-        Text(
-          "message $_messages",
-          style: TextStyle(
-            fontSize: 50
-          ),
-        )
-      ],
-    );   
+      ),
+    );
   }
-
-
 }
